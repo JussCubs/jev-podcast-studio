@@ -1,0 +1,16 @@
+{
+  "name": "Jev Podcast Studio",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "studio-web",
+      "command": "npm run dev"
+    }
+  ],
+  "ports": [
+    {
+      "name": "Studio web UI",
+      "port": 3000
+    }
+  ]
+}
