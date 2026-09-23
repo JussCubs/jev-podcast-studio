@@ -1,0 +1,90 @@
+{
+  "id": "general",
+  "label": "General (full toolkit)",
+  "description": "Default profile. Every documented xAI/Grok-class speech tag is allowed, including dramatic cry/sigh paths and musical sing/sing-song/hum-tune paths. Jev classifies when those paths are appropriate; the heavy model still authors. Clone this file rather than deleting tags from the catalog.",
+  "default_genre": "informative",
+  "target_duration_sec": 300,
+  "voices": {
+    "host": "leo",
+    "cohost": "ara",
+    "guest": "rex",
+    "narrator": "sal"
+  },
+  "tts": {
+    "provider": "xai",
+    "language": "en",
+    "speed": 1.0,
+    "output_codec": "wav",
+    "sample_rate": 44100,
+    "text_normalization": true
+  },
+  "loudness": {
+    "i_lufs": -16,
+    "true_peak_dbtp": -1.5,
+    "lra": 11
+  },
+  "chapters": {
+    "enabled": true,
+    "source": "beats"
+  },
+  "brand_voice": [
+    "Informative, bold, emotionally alive — not NotebookLM mush.",
+    "Prefer speech tags over SFX.",
+    "One idea per beat. Land it. Move.",
+    "Laughs, hmms, pauses, and emphasis are first-class, not decoration."
+  ],
+  "allowed_inline_tags": [
+    "pause",
+    "long-pause",
+    "laugh",
+    "chuckle",
+    "giggle",
+    "cry",
+    "hum-tune",
+    "tsk",
+    "tongue-click",
+    "lip-smack",
+    "breath",
+    "inhale",
+    "exhale",
+    "sigh"
+  ],
+  "allowed_wrapping_tags": [
+    "whisper",
+    "soft",
+    "loud",
+    "build-intensity",
+    "decrease-intensity",
+    "emphasis",
+    "slow",
+    "fast",
+    "higher-pitch",
+    "lower-pitch",
+    "singing",
+    "sing-song",
+    "laugh-speak"
+  ],
+  "skip_tags_by_default": [],
+  "sfx": {
+    "policy_id": "voice-first-sparse",
+    "max_accents": 4,
+    "allow_beds": false,
+    "allow_laugh_track": false,
+    "allow_meme_whoosh": false
+  },
+  "jev_thresholds": {
+    "credibility_noul_min": 0.72,
+    "one_idea_score_min": 2.2,
+    "delivery_score_min": 1.6,
+    "delivery_score_max": 3.3,
+    "ship_noul_min": 0.78,
+    "choice_confidence_min": 0.55,
+    "somber_path_noul_min": 0.7,
+    "musical_path_noul_min": 0.7
+  },
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "musical",
+  "title": "Musical / sung interludes",
+  "sfx_policy_id": "musical-beds",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [2, 8],
+  "tag_guidance": {
+    "default_density": "alive-rich",
+    "welcome": ["singing", "sing-song", "hum-tune", "pause", "build-intensity", "higher-pitch", "lower-pitch"],
+    "earned_only": ["whisper", "laugh-speak"],
+    "usually_wrong": ["spoken-only episodes tagged musical with zero sung bars"]
+  },
+  "writer_notes": [
+    "Use wrapping <singing> for actual sung lines, <sing-song> for lilt, [hum-tune] for think-hums.",
+    "Jev musical_path_ok must pass before render. Beds may sit under sung bars only, ducked under speech."
+  ]
+}

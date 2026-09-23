@@ -1,0 +1,21 @@
+{
+  "id": "interview",
+  "title": "Interview / multi-host debate",
+  "sfx_policy_id": "none",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [6, 20],
+  "tag_guidance": {
+    "default_density": "alive-sparse",
+    "welcome": ["pause", "breath", "chuckle", "tsk", "emphasis", "soft"],
+    "earned_only": ["laugh", "loud", "build-intensity"],
+    "usually_wrong": ["singing", "hum-tune", "laugh-track SFX"]
+  },
+  "writer_notes": [
+    "Guests get a distinct voice_id. Debate needs a real disagreement, not 'great question'.",
+    "Interruptions are written as short overlapping-feeling turns plus [pause], not as SFX."
+  ]
+}

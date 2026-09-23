@@ -1,0 +1,22 @@
+{
+  "id": "informative",
+  "title": "Informative / product brief",
+  "sfx_policy_id": "voice-first-sparse",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [4, 6],
+  "tag_guidance": {
+    "default_density": "alive-sparse",
+    "welcome": ["pause", "emphasis", "chuckle", "laugh", "loud", "slow", "breath"],
+    "earned_only": ["whisper", "build-intensity", "laugh-speak"],
+    "usually_wrong": ["cry", "singing", "sing-song", "hum-tune"]
+  },
+  "writer_notes": [
+    "Two hosts unpack one product, one decision, or one changelog that matters.",
+    "Numbers need a so-what. Do not read a spec sheet.",
+    "Jev gates ship vs rewrite per beat."
+  ]
+}

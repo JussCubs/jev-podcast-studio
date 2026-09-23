@@ -1,0 +1,21 @@
+{
+  "id": "narrative",
+  "title": "Narrative / storytelling",
+  "sfx_policy_id": "sting-only",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [4, 12],
+  "tag_guidance": {
+    "default_density": "alive-rich",
+    "welcome": ["pause", "long-pause", "breath", "inhale", "sigh", "whisper", "soft", "build-intensity", "decrease-intensity"],
+    "earned_only": ["cry", "lower-pitch", "hum-tune"],
+    "usually_wrong": ["singing on plot dumps", "giggle on harm"]
+  },
+  "writer_notes": [
+    "Scene, want, turn, landing. Hosts can be narrators or characters.",
+    "Jev somber_path_ok before any cry tag ships."
+  ]
+}

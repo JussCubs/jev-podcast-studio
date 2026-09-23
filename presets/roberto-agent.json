@@ -1,0 +1,86 @@
+{
+  "id": "roberto-agent",
+  "label": "Roberto product briefs",
+  "description": "Optional narrowing preset for short two-host product podcasts. Does not remove tags from the kit catalog — it skip-lists cry / singing / sing-song / hum-tune unless a later turn explicitly opts in. Sparse SFX. leo + ara.",
+  "default_genre": "informative",
+  "target_duration_sec": 300,
+  "voices": {
+    "host": "leo",
+    "cohost": "ara"
+  },
+  "tts": {
+    "provider": "xai",
+    "language": "en",
+    "speed": 1.0,
+    "output_codec": "wav",
+    "sample_rate": 44100,
+    "text_normalization": true
+  },
+  "loudness": {
+    "i_lufs": -16,
+    "true_peak_dbtp": -1.5,
+    "lra": 11
+  },
+  "chapters": {
+    "enabled": false,
+    "source": "none"
+  },
+  "brand_voice": [
+    "Two hosts. Product brief. Four to six minutes.",
+    "Bold and specific. Numbers earned, not recited.",
+    "Ban corporate mush, 'in today's episode', and hedge stacks.",
+    "Speech tags carry emotion. SFX is an accent, never a bed.",
+    "Do not cry, sing, sing-song, or hum-tune on a product brief unless the source material is itself a eulogy or a song."
+  ],
+  "allowed_inline_tags": [
+    "pause",
+    "long-pause",
+    "laugh",
+    "chuckle",
+    "giggle",
+    "tsk",
+    "tongue-click",
+    "lip-smack",
+    "breath",
+    "inhale",
+    "exhale",
+    "sigh"
+  ],
+  "allowed_wrapping_tags": [
+    "whisper",
+    "soft",
+    "loud",
+    "build-intensity",
+    "decrease-intensity",
+    "emphasis",
+    "slow",
+    "fast",
+    "higher-pitch",
+    "lower-pitch",
+    "laugh-speak"
+  ],
+  "skip_tags_by_default": ["cry", "singing", "sing-song", "hum-tune", "sing"],
+  "sfx": {
+    "policy_id": "voice-first-sparse",
+    "max_accents": 3,
+    "allow_beds": false,
+    "allow_laugh_track": false,
+    "allow_meme_whoosh": false
+  },
+  "jev_thresholds": {
+    "credibility_noul_min": 0.75,
+    "one_idea_score_min": 2.4,
+    "delivery_score_min": 1.7,
+    "delivery_score_max": 3.1,
+    "ship_noul_min": 0.8,
+    "choice_confidence_min": 0.58,
+    "somber_path_noul_min": 0.9,
+    "musical_path_noul_min": 0.9
+  },
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json",
+    "rubrics/genres/informative.json"
+  ]
+}

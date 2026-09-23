@@ -1,0 +1,49 @@
+{
+  "id": "genre-snippet-dramatic",
+  "title": "The last on-call",
+  "preset": "general",
+  "genre": "dramatic",
+  "language": "en",
+  "stage": "performed",
+  "target_duration_sec": 90,
+  "one_sentence_promise": "Some pages are not incidents. They are goodbyes.",
+  "hosts": [
+    { "id": "leo", "role": "host", "voice_id": "leo" },
+    { "id": "ara", "role": "cohost", "voice_id": "ara" }
+  ],
+  "beats": [
+    {
+      "id": "scene",
+      "purpose": "A night the pager meant something else",
+      "one_idea": "The last message was not a stack trace."
+    }
+  ],
+  "turns": [
+    {
+      "id": "d1",
+      "speaker": "leo",
+      "beat_id": "scene",
+      "text": "[inhale] I kept the pager on the night she left the company. I thought it would be a config drift. [long-pause] It was a goodbye.",
+      "estimated_sec": 12
+    },
+    {
+      "id": "d2",
+      "speaker": "ara",
+      "beat_id": "scene",
+      "text": "<soft>You do not have to make it a joke.</soft> [sigh] We can just say it. [cry]",
+      "estimated_sec": 8
+    },
+    {
+      "id": "d3",
+      "speaker": "leo",
+      "beat_id": "scene",
+      "text": "<decrease-intensity><lower-pitch>Yeah. That's the last thing she said.</lower-pitch></decrease-intensity>",
+      "estimated_sec": 6
+    }
+  ],
+  "sfx_plan": [],
+  "meta": {
+    "snippet": true,
+    "purpose": "Proves cry/sigh/decrease-intensity stay in the general kit. Will fail preset roberto-agent skip-list on purpose."
+  }
+}

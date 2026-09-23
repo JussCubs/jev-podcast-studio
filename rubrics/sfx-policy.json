@@ -1,0 +1,69 @@
+{
+  "id": "sfx-policy",
+  "title": "SFX policies (voice-first)",
+  "principle": "Prefer xAI speech tags over sound effects. SFX is punctuation, not a score under the hosts.",
+  "bans_global": [
+    "constant music beds under dialogue (except the musical genre's explicit bed policy)",
+    "meme whooshes on every cut",
+    "laugh tracks",
+    "stock 'news sting' loops",
+    "SFX that drown a number the host is saying"
+  ],
+  "policies": {
+    "none": {
+      "max_accents": 0,
+      "allow_beds": false,
+      "notes": "Speech tags only. Use for interviews that should feel like a room."
+    },
+    "voice-first-sparse": {
+      "max_accents": 4,
+      "allow_beds": false,
+      "budget": {
+        "cold-open-hit": 1,
+        "key-number-ding": 1,
+        "section-whoosh": 1,
+        "outro": 1
+      },
+      "notes": "Default. ≤1 of each named kind. Roberto further caps total accents at 3 per 4–6 min."
+    },
+    "sting-only": {
+      "max_accents": 2,
+      "allow_beds": false,
+      "budget": {
+        "cold-open-hit": 1,
+        "outro": 1
+      }
+    },
+    "light-bed": {
+      "max_accents": 4,
+      "allow_beds": true,
+      "bed_rules": [
+        "Bed only in pre-roll / outro or under a sung interlude, never under spoken argument.",
+        "Duck at least 12 dB under any speech.",
+        "No looping meme beds."
+      ]
+    },
+    "comedy-accents": {
+      "max_accents": 8,
+      "allow_beds": false,
+      "notes": "Denser hits allowed. Still no laugh track — hosts laugh with tags."
+    },
+    "musical-beds": {
+      "max_accents": 6,
+      "allow_beds": true,
+      "notes": "Beds and hummed/sung tags are in-genre. Still duck under spoken turns."
+    }
+  },
+  "jev_questions": {
+    "sfx_budget": {
+      "type": "choice",
+      "instructions": "What SFX budget should this episode use, given genre and the written plan?",
+      "criteria": {
+        "none": "No non-speech audio. Speech tags carry everything. Interview-in-a-room, or the script is already busy.",
+        "sting-only": "At most a cold-open hit and an outro. No ding, no whoosh.",
+        "light-bed": "Sparse accents plus an optional bed that never sits under argument. Musical or branded shows only.",
+        "reject_noisy": "The proposed plan has constant beds, meme whooshes, laugh tracks, or more accents than the preset cap."
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "preset": "general",
+  "model": "typesafe/jev-1.13",
+  "note": "Illustrative Decisions API shape. Not a live Jev response. Live calls return answers keyed the same way under `answers`.",
+  "thresholds": {
+    "credibility_noul_min": 0.72,
+    "one_idea_score_min": 2.2,
+    "delivery_score_min": 1.6,
+    "delivery_score_max": 3.3,
+    "ship_noul_min": 0.78
+  },
+  "turns": [
+    {
+      "turn_id": "t01",
+      "answers": {
+        "delivery_path": {
+          "type": "choice",
+          "choice": "punchy_emphasis",
+          "confidence": 0.81,
+          "probabilities": {
+            "conversational": 0.12,
+            "punchy_emphasis": 0.81,
+            "laugh_playful": 0.04,
+            "whisper_intimate": 0.01,
+            "somber_cry": 0.0,
+            "musical_sung": 0.0,
+            "intense_build": 0.02,
+            "overacted_reject": 0.0
+          }
+        },
+        "tag_density": {
+          "type": "score",
+          "score": 2.1,
+          "confidence": 0.88,
+          "legend": {
+            "0": "Barren",
+            "1": "Stiff",
+            "2": "Alive-sparse",
+            "3": "Alive-rich",
+            "4": "Tag soup"
+          },
+          "probabilities": { "0": 0.0, "1": 0.08, "2": 0.74, "3": 0.18, "4": 0.0 }
+        },
+        "flat_vs_overacted": {
+          "type": "score",
+          "score": 2.2,
+          "confidence": 0.9,
+          "probabilities": { "0": 0.0, "1": 0.05, "2": 0.72, "3": 0.23, "4": 0.0 }
+        },
+        "one_idea_clarity": {
+          "type": "score",
+          "score": 3.1,
+          "confidence": 0.86,
+          "probabilities": { "0": 0.0, "1": 0.02, "2": 0.1, "3": 0.66, "4": 0.22 }
+        },
+        "credibility_holds": { "type": "noul", "noul": 0.91 },
+        "somber_path_ok": { "type": "noul", "noul": 0.04 },
+        "musical_path_ok": { "type": "noul", "noul": 0.02 }
+      },
+      "gate": {
+        "actions": [],
+        "ship": true,
+        "delivery_path": "punchy_emphasis"
+      }
+    },
+    {
+      "turn_id": "t11",
+      "answers": {
+        "delivery_path": {
+          "type": "choice",
+          "choice": "laugh_playful",
+          "confidence": 0.77,
+          "probabilities": {
+            "laugh_playful": 0.77,
+            "conversational": 0.18,
+            "overacted_reject": 0.02
+          }
+        },
+        "flat_vs_overacted": { "type": "score", "score": 2.6, "confidence": 0.8 },
+        "credibility_holds": { "type": "noul", "noul": 0.84 },
+        "somber_path_ok": { "type": "noul", "noul": 0.01 },
+        "musical_path_ok": { "type": "noul", "noul": 0.03 }
+      },
+      "gate": { "actions": [], "ship": true, "delivery_path": "laugh_playful" }
+    }
+  ],
+  "sfx": {
+    "sfx_budget": {
+      "type": "choice",
+      "choice": "sting-only",
+      "confidence": 0.7,
+      "probabilities": {
+        "none": 0.18,
+        "sting-only": 0.62,
+        "light-bed": 0.16,
+        "reject_noisy": 0.04
+      }
+    }
+  },
+  "ship": {
+    "ship_episode": { "type": "noul", "noul": 0.86 }
+  },
+  "actions": []
+}
