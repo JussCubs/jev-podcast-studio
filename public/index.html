@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jev Podcast Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">🎙</span>
+          <div>
+            <h1>Jev Podcast Studio</h1>
+            <p>Brief → heavy-model script → Jev attention score → expressive TTS</p>
+          </div>
+        </div>
+        <span id="mode-badge" class="badge badge-muted">checking…</span>
+      </header>
+
+      <main class="layout">
+        <section class="panel form-panel">
+          <h2>Episode brief</h2>
+          <form id="brief-form">
+            <label>
+              Product / topic
+              <input id="product" name="product" value="Acme CLI" required />
+            </label>
+            <label>
+              Audience
+              <input id="audience" name="audience" value="indie developers" />
+            </label>
+            <label>
+              Talking points <small>(one per line)</small>
+              <textarea id="points" rows="4">instant setup with zero config
+works completely offline
+scales from a script to a studio</textarea>
+            </label>
+            <div class="row">
+              <label>
+                Tone
+                <select id="tone">
+                  <option value="energetic">Energetic</option>
+                  <option value="authoritative">Authoritative</option>
+                  <option value="friendly">Friendly</option>
+                  <option value="playful">Playful</option>
+                </select>
+              </label>
+              <label>
+                Target seconds
+                <input id="seconds" type="number" min="20" max="240" value="60" />
+              </label>
+            </div>
+            <button id="generate" type="submit">Generate episode</button>
+          </form>
+        </section>
+
+        <section class="panel result-panel">
+          <div id="empty" class="empty">
+            <p>Fill in a brief and hit <strong>Generate episode</strong>.</p>
+            <p class="muted">
+              Runs fully offline. Add an <code>XAI_API_KEY</code> to switch to live
+              Grok scripts and xAI expressive TTS.
+            </p>
+          </div>
+
+          <div id="result" class="result hidden">
+            <div class="score-hero">
+              <div class="score-ring" id="score-ring">
+                <span id="score-value">0</span>
+                <small>Jev score</small>
+              </div>
+              <div class="score-meta">
+                <span id="grade-badge" class="badge">–</span>
+                <h3 id="episode-title">Episode title</h3>
+                <p id="episode-sub" class="muted"></p>
+                <ul id="score-notes"></ul>
+              </div>
+            </div>
+
+            <div class="metrics" id="metrics"></div>
+
+            <h4>Predicted retention</h4>
+            <div class="retention" id="retention"></div>
+
+            <h4>Audio</h4>
+            <audio id="player" controls></audio>
+            <p id="audio-meta" class="muted"></p>
+
+            <h4>Script</h4>
+            <div id="script" class="script"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
