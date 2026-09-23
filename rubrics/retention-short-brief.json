@@ -1,0 +1,55 @@
+{
+  "id": "retention-short-brief",
+  "title": "Retention for a short episode",
+  "applies_to_genres": [
+    "informative",
+    "narrative",
+    "interview",
+    "educational",
+    "comedy",
+    "musical",
+    "dramatic"
+  ],
+  "target_minutes": [4, 6],
+  "heavy_model_must": [
+    "Open on tension, a number, a scene, or a confession — never 'in today's episode'.",
+    "One idea per beat. Say it, prove it, land it, leave.",
+    "Specific nouns and verbs. Kill hedge stacks (kind of, sort of, maybe, I think).",
+    "Hosts disagree or surprise each other at least once.",
+    "Close on a repeatable sentence, not a recap of the recap."
+  ],
+  "jev_questions": {
+    "cold_open_pick": {
+      "type": "choice",
+      "instructions": "Which cold-open will a busy listener still be in the room for after fifteen seconds?",
+      "criteria_from": "state.candidates"
+    },
+    "one_idea_clarity": {
+      "type": "score",
+      "instructions": "How clearly does this beat carry exactly one idea?",
+      "criteria": [
+        "Several unrelated ideas mashed; listener cannot quote anything.",
+        "Two ideas compete; landing is fuzzy.",
+        "One idea with a visible tangent that could be cut.",
+        "One clear idea, earned, then the hosts leave.",
+        "One idea with an unforgettable landing a listener would repeat."
+      ]
+    },
+    "would_rewatch_hook": {
+      "type": "noul",
+      "instructions": "Would a skeptical product person keep listening past the cold open?",
+      "criteria": {
+        "true": "The first 15 seconds contain tension, a concrete number, a scene, or a confession.",
+        "false": "The first 15 seconds are greeting, agenda, or generic enthusiasm."
+      }
+    },
+    "ship_episode": {
+      "type": "noul",
+      "instructions": "Should this episode ship as-is rather than rewrite a beat?",
+      "criteria": {
+        "true": "Promise is kept, beats are one-idea, delivery is alive but credible, SFX does not compete with speech.",
+        "false": "A beat is mush, over-acted, off-promise, or the SFX plan is noisy."
+      }
+    }
+  }
+}

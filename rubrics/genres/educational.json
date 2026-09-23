@@ -1,0 +1,21 @@
+{
+  "id": "educational",
+  "title": "Educational / course-style",
+  "sfx_policy_id": "sting-only",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [4, 12],
+  "tag_guidance": {
+    "default_density": "alive-sparse",
+    "welcome": ["pause", "emphasis", "slow", "soft", "tongue-click", "breath"],
+    "earned_only": ["loud", "higher-pitch", "chuckle"],
+    "usually_wrong": ["cry", "singing unless a memory-hook jingle is the pedagogy"]
+  },
+  "writer_notes": [
+    "One learning outcome per beat. Recap is a button, not a second lecture.",
+    "Chapters from beats are on by default in the general preset."
+  ]
+}

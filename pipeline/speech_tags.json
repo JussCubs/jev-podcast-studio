@@ -1,0 +1,199 @@
+{
+  "$comment": "Canonical xAI / Grok-class speech-tag catalog for this kit. Verify against https://docs.x.ai/developers/model-capabilities/audio/text-to-speech before treating a name as gospel.",
+  "source_urls": [
+    "https://docs.x.ai/developers/model-capabilities/audio/text-to-speech",
+    "https://docs.x.ai/developers/model-capabilities/audio/voice",
+    "https://docs.x.ai/docs/models/voice/tts"
+  ],
+  "aliases": {
+    "hum": "hum-tune",
+    "sing": "singing",
+    "laugh-while-speaking": "laugh-speak",
+    "laugh_speak": "laugh-speak",
+    "buildintensity": "build-intensity",
+    "decreaseintensity": "decrease-intensity",
+    "higherpitch": "higher-pitch",
+    "lowerpitch": "lower-pitch",
+    "longpause": "long-pause",
+    "tongueclick": "tongue-click",
+    "lipsmack": "lip-smack",
+    "humtune": "hum-tune"
+  },
+  "inline": [
+    {
+      "name": "pause",
+      "group": "pauses",
+      "dramatic": false,
+      "example": "So I walked in and [pause] there it was."
+    },
+    {
+      "name": "long-pause",
+      "group": "pauses",
+      "dramatic": true,
+      "example": "And then [long-pause] nothing."
+    },
+    {
+      "name": "laugh",
+      "group": "laughter_crying",
+      "dramatic": false,
+      "example": "[laugh] I honestly could not believe it!"
+    },
+    {
+      "name": "chuckle",
+      "group": "laughter_crying",
+      "dramatic": false,
+      "example": "[chuckle] We've all been in that room."
+    },
+    {
+      "name": "giggle",
+      "group": "laughter_crying",
+      "dramatic": false,
+      "example": "Don't [giggle] start, I'm trying to be serious."
+    },
+    {
+      "name": "cry",
+      "group": "laughter_crying",
+      "dramatic": true,
+      "somber_path": true,
+      "example": "I didn't expect it to land like that. [cry]"
+    },
+    {
+      "name": "hum-tune",
+      "group": "musical",
+      "dramatic": true,
+      "musical_path": true,
+      "example": "Give me a second. [hum-tune] Okay. Back."
+    },
+    {
+      "name": "tsk",
+      "group": "mouth",
+      "dramatic": false,
+      "example": "[tsk] That's the wrong number."
+    },
+    {
+      "name": "tongue-click",
+      "group": "mouth",
+      "dramatic": false,
+      "example": "[tongue-click] Next slide."
+    },
+    {
+      "name": "lip-smack",
+      "group": "mouth",
+      "dramatic": false,
+      "example": "[lip-smack] Alright. Here is the spicy bit."
+    },
+    {
+      "name": "breath",
+      "group": "breathing",
+      "dramatic": false,
+      "example": "[breath] Okay. One idea."
+    },
+    {
+      "name": "inhale",
+      "group": "breathing",
+      "dramatic": false,
+      "example": "[inhale] This is the part I wanted to get right."
+    },
+    {
+      "name": "exhale",
+      "group": "breathing",
+      "dramatic": true,
+      "somber_path": true,
+      "example": "[exhale] Yeah. That's the tradeoff."
+    },
+    {
+      "name": "sigh",
+      "group": "breathing",
+      "dramatic": true,
+      "somber_path": true,
+      "example": "[sigh] We shipped it anyway."
+    }
+  ],
+  "wrapping": [
+    {
+      "name": "whisper",
+      "group": "vocal_style",
+      "dramatic": true,
+      "example": "I need to tell you something. <whisper>It is a secret.</whisper>"
+    },
+    {
+      "name": "soft",
+      "group": "volume_intensity",
+      "dramatic": false,
+      "example": "<soft>Stay with me for this next number.</soft>"
+    },
+    {
+      "name": "loud",
+      "group": "volume_intensity",
+      "dramatic": false,
+      "example": "<loud>Three million events. Not three thousand.</loud>"
+    },
+    {
+      "name": "build-intensity",
+      "group": "volume_intensity",
+      "dramatic": true,
+      "example": "<build-intensity>And it kept growing. And growing. And then it broke.</build-intensity>"
+    },
+    {
+      "name": "decrease-intensity",
+      "group": "volume_intensity",
+      "dramatic": true,
+      "somber_path": true,
+      "example": "<decrease-intensity>That's the last thing she said.</decrease-intensity>"
+    },
+    {
+      "name": "emphasis",
+      "group": "vocal_style",
+      "dramatic": false,
+      "example": "The constraint is <emphasis>four minutes</emphasis>, not forty."
+    },
+    {
+      "name": "slow",
+      "group": "pitch_speed",
+      "dramatic": false,
+      "example": "<slow>Read the number again.</slow>"
+    },
+    {
+      "name": "fast",
+      "group": "pitch_speed",
+      "dramatic": false,
+      "example": "<fast>Ship it, measure it, kill it if it lies.</fast>"
+    },
+    {
+      "name": "higher-pitch",
+      "group": "pitch_speed",
+      "dramatic": false,
+      "example": "<higher-pitch>Wait, it actually worked?</higher-pitch>"
+    },
+    {
+      "name": "lower-pitch",
+      "group": "pitch_speed",
+      "dramatic": true,
+      "example": "<lower-pitch>This is the part we do not joke about.</lower-pitch>"
+    },
+    {
+      "name": "singing",
+      "group": "musical",
+      "dramatic": true,
+      "musical_path": true,
+      "example": "<singing>Don't bury the lede.</singing>"
+    },
+    {
+      "name": "sing-song",
+      "group": "musical",
+      "dramatic": true,
+      "musical_path": true,
+      "example": "<sing-song>Here comes the disclaimer.</sing-song>"
+    },
+    {
+      "name": "laugh-speak",
+      "group": "vocal_style",
+      "dramatic": false,
+      "example": "<laugh-speak>We did put the graph in the appendix. Once.</laugh-speak>"
+    }
+  ],
+  "not_native_xai": {
+    "note": "Some agent stacks (e.g. LiveKit expr dialect) use intermediate emotion labels like happy/sad/angry. Those are NOT xAI native tags. Lower them to the wrapping/inline tags above before calling POST /v1/tts.",
+    "examples": ["happy", "sad", "angry", "excited", "calm"]
+  }
+}

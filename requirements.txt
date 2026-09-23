@@ -1,0 +1,4 @@
+# Dry-run schema + tag validation uses the stdlib only.
+# Install these for stricter JSON Schema checks and a slightly nicer HTTP client.
+jsonschema>=4.23.0
+# requests is optional; pipeline.jev_client and TTS use urllib by default.

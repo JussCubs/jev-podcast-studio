@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/JussCubs/jev-podcast-studio/presets/preset.schema.json",
+  "title": "PodcastStudioPreset",
+  "description": "Clone-and-customize profile. Default 'general' keeps the full tag set on. Other presets only narrow.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "label", "voices", "allowed_inline_tags", "allowed_wrapping_tags"],
+  "properties": {
+    "id": { "type": "string" },
+    "label": { "type": "string" },
+    "description": { "type": "string" },
+    "default_genre": {
+      "type": "string",
+      "enum": [
+        "informative",
+        "narrative",
+        "interview",
+        "educational",
+        "comedy",
+        "musical",
+        "dramatic"
+      ]
+    },
+    "target_duration_sec": { "type": "number" },
+    "voices": {
+      "type": "object",
+      "required": ["host"],
+      "properties": {
+        "host": { "type": "string" },
+        "cohost": { "type": "string" },
+        "guest": { "type": "string" },
+        "narrator": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "tts": {
+      "type": "object",
+      "properties": {
+        "provider": { "type": "string", "enum": ["xai", "chatterbox", "fish"] },
+        "language": { "type": "string" },
+        "speed": { "type": "number", "minimum": 0.7, "maximum": 1.5 },
+        "output_codec": { "type": "string" },
+        "sample_rate": { "type": "integer" },
+        "bit_rate": { "type": "integer" },
+        "text_normalization": { "type": "boolean" }
+      }
+    },
+    "loudness": {
+      "type": "object",
+      "properties": {
+        "i_lufs": { "type": "number", "description": "Integrated LUFS target for ffmpeg loudnorm." },
+        "true_peak_dbtp": { "type": "number" },
+        "lra": { "type": "number" }
+      }
+    },
+    "chapters": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "source": { "type": "string", "enum": ["beats", "none"] }
+      }
+    },
+    "brand_voice": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "allowed_inline_tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "allowed_wrapping_tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "skip_tags_by_default": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags still in the catalog but off unless a turn or genre explicitly opts in."
+    },
+    "sfx": {
+      "type": "object",
+      "properties": {
+        "policy_id": { "type": "string" },
+        "max_accents": { "type": "integer", "minimum": 0 },
+        "allow_beds": { "type": "boolean" },
+        "allow_laugh_track": { "type": "boolean" },
+        "allow_meme_whoosh": { "type": "boolean" }
+      }
+    },
+    "jev_thresholds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "rubric_pack": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

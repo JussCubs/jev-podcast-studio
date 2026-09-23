@@ -1,0 +1,49 @@
+{
+  "id": "genre-snippet-musical",
+  "title": "Don't bury the lede (button)",
+  "preset": "general",
+  "genre": "musical",
+  "language": "en",
+  "stage": "performed",
+  "target_duration_sec": 60,
+  "one_sentence_promise": "A sung button can be a memory hook without becoming a musical.",
+  "hosts": [
+    { "id": "ara", "role": "host", "voice_id": "ara" },
+    { "id": "leo", "role": "cohost", "voice_id": "leo" }
+  ],
+  "beats": [
+    {
+      "id": "button",
+      "purpose": "Sung memory hook",
+      "one_idea": "Don't bury the lede."
+    }
+  ],
+  "turns": [
+    {
+      "id": "m1",
+      "speaker": "ara",
+      "beat_id": "button",
+      "text": "Give me a second. [hum-tune] Okay. Back.",
+      "estimated_sec": 4
+    },
+    {
+      "id": "m2",
+      "speaker": "leo",
+      "beat_id": "button",
+      "text": "<singing>Don't bury the lede.</singing>",
+      "estimated_sec": 4
+    },
+    {
+      "id": "m3",
+      "speaker": "ara",
+      "beat_id": "button",
+      "text": "<sing-song>Here comes the disclaimer.</sing-song> Not legal advice. Still true.",
+      "estimated_sec": 5
+    }
+  ],
+  "sfx_plan": [],
+  "meta": {
+    "snippet": true,
+    "purpose": "Proves singing / sing-song / hum-tune stay in the general kit. Will fail preset roberto-agent skip-list on purpose."
+  }
+}

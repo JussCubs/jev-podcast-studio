@@ -1,0 +1,82 @@
+{
+  "id": "emotion-density",
+  "title": "Emotion and delivery density (full expressive range)",
+  "description": "Jev classifies delivery path and scores density. The heavy model writes tags. Do not omit dramatic or musical paths from this rubric — presets skip-list them instead.",
+  "tag_groups": {
+    "pauses": ["pause", "long-pause"],
+    "laughter": ["laugh", "chuckle", "giggle", "laugh-speak"],
+    "somber_cry": ["cry", "sigh", "exhale", "decrease-intensity", "lower-pitch", "whisper", "soft"],
+    "breathing": ["breath", "inhale", "exhale", "sigh"],
+    "mouth": ["tsk", "tongue-click", "lip-smack"],
+    "musical": ["hum-tune", "singing", "sing-song"],
+    "intensity": ["loud", "soft", "whisper", "build-intensity", "decrease-intensity", "emphasis", "slow", "fast", "higher-pitch", "lower-pitch"]
+  },
+  "jev_questions": {
+    "delivery_path": {
+      "type": "choice",
+      "instructions": "Which delivery path fits this turn given genre, beat purpose, and the words themselves?",
+      "criteria": {
+        "conversational": "Two people talking. Light pauses, maybe a chuckle. No performance stunt.",
+        "punchy_emphasis": "A number, a verdict, or a contradiction that wants stress, loud/emphasis, or a short pause — not tears and not song.",
+        "laugh_playful": "The line is actually funny or the hosts are catching each other. Laugh, chuckle, giggle, or laugh-speak belong here.",
+        "whisper_intimate": "A secret, an aside, or a confidence. Whisper or soft. Not a gimmick on a public fact.",
+        "somber_cry": "Grief, loss, apology, or a weight the hosts would not joke about. Cry, sigh, exhale, decrease-intensity, lower-pitch are in-bounds. Inappropriate on a cheerful changelog.",
+        "musical_sung": "The beat is a hook, jingle, sung interlude, or playful sing-song disclaimer. singing, sing-song, or hum-tune belong here. Inappropriate on a straight product brief unless the source material is itself a song.",
+        "intense_build": "A rising argument or reveal. build-intensity, loud, fast. Must still be one idea.",
+        "overacted_reject": "Tags are stacked for their own sake, or the path fights the words (crying on a pricing table, singing a CVE)."
+      }
+    },
+    "tag_density": {
+      "type": "score",
+      "instructions": "Where does this turn sit on expressive density relative to a credible human conversation in this genre?",
+      "criteria": [
+        "Barren: zero tags, dead TTS, no breath or pause. Generic audiobook mush.",
+        "Stiff: one pause maybe, still sounds read.",
+        "Alive-sparse: a well-placed pause, emphasis, or small laugh. Default target for informative / educational.",
+        "Alive-rich: several tags that a real host would actually do. Default target for comedy, narrative peaks, dramatic scenes.",
+        "Tag soup: almost every clause wrapped or punctuated. Over-acted; credibility breaks."
+      ]
+    },
+    "flat_vs_overacted": {
+      "type": "score",
+      "instructions": "Is the performance flat, naturally alive, or over-acted?",
+      "criteria": [
+        "Dead-flat. Could be a voicemail.",
+        "Slightly stiff. Human but cautious.",
+        "Naturally alive. Laughs, hmms, pauses, emphasis where a person would.",
+        "Heightened but still a person you would believe in the room.",
+        "Over-acted. Community-theater or parody of emotion."
+      ]
+    },
+    "credibility_holds": {
+      "type": "noul",
+      "instructions": "Would a skeptical listener believe this speaker knows the material and is not performing a cartoon of feeling?",
+      "criteria": {
+        "true": "Emotion matches the claim. Tags support the line. No fake intimacy on a spec sheet.",
+        "false": "Crying, singing, whispering, or laugh-stacking that the content does not earn — or no emotion at all on a line that needs a pulse."
+      }
+    },
+    "somber_path_ok": {
+      "type": "noul",
+      "instructions": "Is a somber/cry path (cry, sigh, decrease-intensity, lower-pitch) appropriate for this turn?",
+      "criteria": {
+        "true": "The turn is about loss, harm, apology, death, or a moral weight. A dry read would be the dishonest choice.",
+        "false": "The turn is a product fact, a joke, a tutorial step, or light banter. Cry/sigh would be unearned."
+      }
+    },
+    "musical_path_ok": {
+      "type": "noul",
+      "instructions": "Is a musical/sung path (singing, sing-song, hum-tune) appropriate for this turn?",
+      "criteria": {
+        "true": "The beat is explicitly a song, jingle, hummed think-pause, or playful sung button the show format allows.",
+        "false": "The beat is spoken exposition. Singing it would sound like a bit the hosts did not agree to."
+      }
+    }
+  },
+  "code_notes": [
+    "Branch on delivery_path first. If overacted_reject, rewrite — do not render.",
+    "If somber_path_ok noul is below preset.jev_thresholds.somber_path_noul_min, strip cry/sigh-heavy tags and rewrite spoken.",
+    "If musical_path_ok noul is below preset.jev_thresholds.musical_path_noul_min, strip singing/sing-song/hum-tune.",
+    "Informative presets like roberto-agent skip-list those tags so they never reach TTS unless a later human opt-in exists."
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "impact-brief-relay",
+  "title": "Stop reading the changelog out loud",
+  "show": "Impact Brief",
+  "preset": "general",
+  "genre": "informative",
+  "language": "en",
+  "stage": "performed",
+  "target_duration_sec": 300,
+  "one_sentence_promise": "A four-minute two-host brief beats a forty-minute recap when every beat carries one idea and the voices actually sound like people.",
+  "hosts": [
+    {
+      "id": "leo",
+      "name": "Leo",
+      "role": "host",
+      "voice_id": "leo"
+    },
+    {
+      "id": "ara",
+      "name": "Ara",
+      "role": "cohost",
+      "voice_id": "ara"
+    }
+  ],
+  "beats": [
+    {
+      "id": "cold-open",
+      "purpose": "Hook: the standup that became a recap",
+      "one_idea": "Nobody wants the changelog read to them.",
+      "target_sec": 25
+    },
+    {
+      "id": "promise",
+      "purpose": "What this brief is for",
+      "one_idea": "Four minutes, two hosts, one product decision.",
+      "target_sec": 35
+    },
+    {
+      "id": "mechanic",
+      "purpose": "How the format works",
+      "one_idea": "Heavy model writes, a judge scores, speech tags carry emotion.",
+      "target_sec": 90
+    },
+    {
+      "id": "number",
+      "purpose": "The retention claim",
+      "one_idea": "If they cannot repeat one sentence, you failed.",
+      "target_sec": 70
+    },
+    {
+      "id": "close",
+      "purpose": "Button",
+      "one_idea": "Ship a brief people finish.",
+      "target_sec": 40
+    }
+  ],
+  "turns": [
+    {
+      "id": "t01",
+      "speaker": "leo",
+      "beat_id": "cold-open",
+      "text": "So I walked in and [pause] the entire standup was a forty-minute recap of a changelog nobody would read.",
+      "text_plain": "So I walked in and the entire standup was a forty-minute recap of a changelog nobody would read.",
+      "estimated_sec": 9
+    },
+    {
+      "id": "t02",
+      "speaker": "ara",
+      "beat_id": "cold-open",
+      "text": "[chuckle] We've all been in that room. Someone is still sharing the Jira board.",
+      "text_plain": "We've all been in that room. Someone is still sharing the Jira board.",
+      "estimated_sec": 6
+    },
+    {
+      "id": "t03",
+      "speaker": "leo",
+      "beat_id": "cold-open",
+      "text": "Today we cut one product to four minutes. [pause] No mush.",
+      "text_plain": "Today we cut one product to four minutes. No mush.",
+      "estimated_sec": 5
+    },
+    {
+      "id": "t04",
+      "speaker": "ara",
+      "beat_id": "promise",
+      "text": "Impact Brief is a two-host product podcast. Not a newsletter with a mouth. Not a model summarizing docs in a <soft>calm professional voice</soft> until you forget why you pressed play.",
+      "text_plain": "Impact Brief is a two-host product podcast. Not a newsletter with a mouth. Not a model summarizing docs in a calm professional voice until you forget why you pressed play.",
+      "estimated_sec": 13
+    },
+    {
+      "id": "t05",
+      "speaker": "leo",
+      "beat_id": "promise",
+      "text": "The constraint is <emphasis>four to six minutes</emphasis>, not forty. If a decision cannot survive that, it was never a decision. It was a tour.",
+      "text_plain": "The constraint is four to six minutes, not forty. If a decision cannot survive that, it was never a decision. It was a tour.",
+      "estimated_sec": 10
+    },
+    {
+      "id": "t06",
+      "speaker": "ara",
+      "beat_id": "promise",
+      "text": "One sentence the listener can steal. [breath] That's the whole product requirement.",
+      "text_plain": "One sentence the listener can steal. That's the whole product requirement.",
+      "estimated_sec": 6
+    },
+    {
+      "id": "t07",
+      "speaker": "leo",
+      "beat_id": "mechanic",
+      "text": "How it is made, because this is the part people get wrong. A heavy generative model writes the outline and the performance. It is allowed to be bold. It is <emphasis>not</emphasis> allowed to be the judge of its own cleverness.",
+      "text_plain": "How it is made, because this is the part people get wrong. A heavy generative model writes the outline and the performance. It is allowed to be bold. It is not allowed to be the judge of its own cleverness.",
+      "estimated_sec": 15
+    },
+    {
+      "id": "t08",
+      "speaker": "ara",
+      "beat_id": "mechanic",
+      "text": "The judge is Jev. Typed decisions only. Choice, noul, score. Probabilities, not paragraphs. If a beat is mush, [pause] code sends it back. The writer does not grade itself.",
+      "text_plain": "The judge is Jev. Typed decisions only. Choice, noul, score. Probabilities, not paragraphs. If a beat is mush, code sends it back. The writer does not grade itself.",
+      "estimated_sec": 12
+    },
+    {
+      "id": "t09",
+      "speaker": "leo",
+      "beat_id": "mechanic",
+      "text": "Then the voices. xAI speech, leo and ara in this show. Laughs, pauses, emphasis live in the text. That is not decoration. [lip-smack] That is the difference between a briefing and a hostage situation.",
+      "text_plain": "Then the voices. xAI speech, leo and ara in this show. Laughs, pauses, emphasis live in the text. That is not decoration. That is the difference between a briefing and a hostage situation.",
+      "estimated_sec": 14
+    },
+    {
+      "id": "t10",
+      "speaker": "ara",
+      "beat_id": "mechanic",
+      "text": "Sound effects are optional punctuation. One hit on the open if you must. One ding on a number that actually matters. Maybe a whoosh between sections. <whisper>No bed humming under the argument like a spa.</whisper>",
+      "text_plain": "Sound effects are optional punctuation. One hit on the open if you must. One ding on a number that actually matters. Maybe a whoosh between sections. No bed humming under the argument like a spa.",
+      "estimated_sec": 14
+    },
+    {
+      "id": "t11",
+      "speaker": "leo",
+      "beat_id": "mechanic",
+      "text": "<laugh-speak>If the hosts need a laugh, they laugh.</laugh-speak> We do not mix in a sitcom track. I will die on that hill and it is a very small hill. [laugh]",
+      "text_plain": "If the hosts need a laugh, they laugh. We do not mix in a sitcom track. I will die on that hill and it is a very small hill.",
+      "estimated_sec": 10
+    },
+    {
+      "id": "t12",
+      "speaker": "ara",
+      "beat_id": "number",
+      "text": "Here is the only metric I will defend. After the close, can they repeat the promise. We tested twelve teammates on a forty-minute recap. [pause] <slow>Zero</slow> quoted the launch. Zero.",
+      "text_plain": "Here is the only metric I will defend. After the close, can they repeat the promise. We tested twelve teammates on a forty-minute recap. Zero quoted the launch. Zero.",
+      "estimated_sec": 13
+    },
+    {
+      "id": "t13",
+      "speaker": "leo",
+      "beat_id": "number",
+      "text": "We cut the same launch to five minutes, two hosts, one idea per beat. <loud>Nine of twelve</loud> said the sentence back. Same facts. Different spine.",
+      "text_plain": "We cut the same launch to five minutes, two hosts, one idea per beat. Nine of twelve said the sentence back. Same facts. Different spine.",
+      "estimated_sec": 12
+    },
+    {
+      "id": "t14",
+      "speaker": "ara",
+      "beat_id": "number",
+      "text": "[tsk] That is not a lab coat study. It is a room full of tired people. Treat it as a dare, not a paper.",
+      "text_plain": "That is not a lab coat study. It is a room full of tired people. Treat it as a dare, not a paper.",
+      "estimated_sec": 8
+    },
+    {
+      "id": "t15",
+      "speaker": "leo",
+      "beat_id": "number",
+      "text": "If your brief needs a graph to be interesting, you buried the lede in the axis labels. [sigh] Don't do that.",
+      "text_plain": "If your brief needs a graph to be interesting, you buried the lede in the axis labels. Don't do that.",
+      "estimated_sec": 7
+    },
+    {
+      "id": "t16",
+      "speaker": "ara",
+      "beat_id": "close",
+      "text": "Steal the format. Clone the kit. Bring your own preset if your show is comedy, or a course, or a story that is allowed to cry. This example is a product brief. It is not the whole studio.",
+      "text_plain": "Steal the format. Clone the kit. Bring your own preset if your show is comedy, or a course, or a story that is allowed to cry. This example is a product brief. It is not the whole studio.",
+      "estimated_sec": 12
+    },
+    {
+      "id": "t17",
+      "speaker": "leo",
+      "beat_id": "close",
+      "text": "Ship a brief people finish. [pause] That is the job. We will see you on the next one, and it will not be forty minutes.",
+      "text_plain": "Ship a brief people finish. That is the job. We will see you on the next one, and it will not be forty minutes.",
+      "estimated_sec": 8
+    }
+  ],
+  "sfx_plan": [
+    {
+      "id": "open-hit",
+      "kind": "cold-open-hit",
+      "at_turn_id": "t01",
+      "offset_ms": 0,
+      "file": "sfx/cold-open-hit.wav",
+      "gain_db": -10,
+      "duck_db": 8
+    },
+    {
+      "id": "nine-of-twelve",
+      "kind": "key-number-ding",
+      "at_turn_id": "t13",
+      "offset_ms": 400,
+      "file": "sfx/key-number-ding.wav",
+      "gain_db": -12,
+      "duck_db": 6
+    }
+  ],
+  "pronunciation": {
+    "Jev": "Jev",
+    "xAI": "X A I"
+  },
+  "meta": {
+    "example": true,
+    "notes": "Performed stage with speech tags. Compatible with preset general. Also validates against roberto-agent (no cry/sing/hum-tune)."
+  }
+}

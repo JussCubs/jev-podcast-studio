@@ -1,0 +1,21 @@
+{
+  "id": "comedy",
+  "title": "Entertainment / comedy",
+  "sfx_policy_id": "comedy-accents",
+  "rubric_pack": [
+    "rubrics/retention-short-brief.json",
+    "rubrics/emotion-density.json",
+    "rubrics/sfx-policy.json"
+  ],
+  "target_minutes": [3, 10],
+  "tag_guidance": {
+    "default_density": "alive-rich",
+    "welcome": ["laugh", "chuckle", "giggle", "laugh-speak", "pause", "higher-pitch", "fast", "sing-song"],
+    "earned_only": ["loud", "build-intensity", "hum-tune"],
+    "usually_wrong": ["cry unless the joke is a swerve into real feeling", "laugh-track SFX"]
+  },
+  "writer_notes": [
+    "Hosts laugh with tags. Never mix a canned laugh track.",
+    "Denser SFX accents are allowed; Jev still rejects constant beds and meme whoosh spam."
+  ]
+}
